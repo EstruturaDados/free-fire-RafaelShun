@@ -17,7 +17,7 @@ typedef struct {
 } Item;
 
 // --- Protótipos das Funções ---
-void exibirMenu();
+void exibirMenu(int numItens);
 void adicionarItem(Item inventario[], int *numItens);
 void removerItem(Item inventario[], int *numItens);
 void listarItens(const Item inventario[], int numItens);
@@ -34,7 +34,7 @@ int main() {
     
     // ⚙️ FUNCIONALIDADE: Menu interativo com switch e do-while
     do {
-        exibirMenu();
+        exibirMenu(numItens);
         
         // Leitura da opção
         if (scanf("%d", &opcao) != 1) {
@@ -69,7 +69,7 @@ int main() {
 // --- Implementação das Funções ---
 
 // Apresenta o menu principal ao usuário.
-void exibirMenu() {
+void exibirMenu(int numItens) {
     printf("\n--- MOCHILA DE SOBREVIVÊNCIA ---\n");
     printf("Itens atuais: %d/%d\n", numItens, MAX_ITENS);
     printf("1. Adicionar item\n");
